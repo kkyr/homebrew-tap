@@ -5,23 +5,23 @@
 class ShellcheckGpt < Formula
   desc "Automatically correct script issues by feeding shellcheck analysis into an LLM"
   homepage "https://github.com/kkyr/shellcheck-gpt"
-  version "0.1.6"
+  version "0.2.0"
   license "MIT"
 
   depends_on "shellcheck"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.1.6/shellcheck-gpt_Darwin_arm64.tar.gz"
-      sha256 "37348be4524823e71eb172f1b9ba418fecd8aff4808de40a59bbcdc94a93544a"
+    if Hardware::CPU.intel?
+      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.2.0/shellcheck-gpt_Darwin_x86_64.tar.gz"
+      sha256 "da7c489e1045bb0254057f402d029192745ae7dbd633e0d7398de2d26a98b04f"
 
       def install
         bin.install "shellcheck-gpt"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.1.6/shellcheck-gpt_Darwin_x86_64.tar.gz"
-      sha256 "bcd35e6a39da55fdfc344179bbc59796f3dc8c19d05e9a2f8bc34b5a0bb2c6d9"
+    if Hardware::CPU.arm?
+      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.2.0/shellcheck-gpt_Darwin_arm64.tar.gz"
+      sha256 "225ad220eb704f7be9e65824f897b04fe86cf61b59e1ff5de4eea8c2439e87e5"
 
       def install
         bin.install "shellcheck-gpt"
@@ -31,16 +31,16 @@ class ShellcheckGpt < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.1.6/shellcheck-gpt_Linux_arm64.tar.gz"
-      sha256 "e9105fa70f1933884a8253d914b017ac955c6b079d5f01362880c108e0bd108a"
+      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.2.0/shellcheck-gpt_Linux_arm64.tar.gz"
+      sha256 "54f96c87a8d289ff5363a4113b9f99bf0c640f3d674f3c1fe77f3f7a7c7b2e48"
 
       def install
         bin.install "shellcheck-gpt"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.1.6/shellcheck-gpt_Linux_x86_64.tar.gz"
-      sha256 "9b8c5e2b3007095ead6f7b2e64909252d5ba44cae39afe69ac9ff05ca3697b1a"
+      url "https://github.com/kkyr/shellcheck-gpt/releases/download/v0.2.0/shellcheck-gpt_Linux_x86_64.tar.gz"
+      sha256 "6bf225a50cced23dc2dd9dd588d9611fc6fb5b4194d6942db3e19f954bb606b7"
 
       def install
         bin.install "shellcheck-gpt"
